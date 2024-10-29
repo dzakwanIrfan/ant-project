@@ -30,7 +30,7 @@ const submit = () => {
 
 <template>
     <GuestLayout class="bg-gradient-to-r from-white to-[#53B4FC]">
-        <div class="min-h-screen lg:px-32 xl:px-40 md:px-12 px-4 pt-40">
+        <div class="min-h-screen xl:px-40 lg:px-32 md:px-12 px-4 pt-40">
             <Head title="Masuk | ant-project.id" />
 
             <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
