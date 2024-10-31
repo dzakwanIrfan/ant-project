@@ -30,13 +30,13 @@ const submit = () => {
 
 <template>
     <GuestLayout class="bg-gradient-to-r from-white to-[#53B4FC]">
-        <div class="min-h-screen xl:px-40 lg:px-32 md:px-12 px-4 pt-40">
-            <Head title="Masuk | ant-project.id" />
+        <div class="xl:px-40 lg:px-32 md:px-12 px-4 py-20">
+            <Head title="Masuk" />
 
             <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
                 {{ status }}
             </div>
-            <div class="flex gap-8 justify-between lg:max-w-5xl w-full bg-white border-blue3 border p-8 shadow-xl m-auto mb-20">
+            <div class="flex gap-8 justify-between lg:max-w-5xl w-full bg-white border-blue3 border p-8 shadow-xl mx-auto">
                 <div class="flex flex-col gap-8 lg:w-1/2 w-full">
                     <div class="flex flex-col">
                         <div class="font-bold text-3xl sm:text-[40px] text-blue3">

@@ -22,9 +22,9 @@ const submit = () => {
 
 <template>
     <GuestLayout class="bg-gradient-to-r from-white to-[#53B4FC]">
-        <div class="min-h-screen lg:px-32 xl:px-40 md:px-12 px-4 pt-40">
-            <Head title="Daftar | ant-project.id" />
-            <div class="flex gap-8 justify-between lg:max-w-5xl w-full bg-white border-blue3 border p-8 shadow-xl m-auto mb-20">
+        <div class="lg:px-32 xl:px-40 md:px-12 px-4 py-20">
+            <Head title="Daftar" />
+            <div class="flex gap-8 justify-between lg:max-w-5xl w-full bg-white border-blue3 border p-8 shadow-xl mx-auto">
                 <img src="masjid/mufid-majnun-DkWjUb8BC6Y-unsplash.jpg" alt="" class="w-1/2 hidden lg:block object-cover">
                 <div class="flex flex-col gap-8 lg:w-1/2 w-full">
                     <div class="flex flex-col">

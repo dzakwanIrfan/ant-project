@@ -14,13 +14,13 @@ const props = defineProps({
 
 const transparantClass = computed(() => {
     return props.transparant
-        ? 'bg-transparent absolute top-0 left-0 right-0'
-        : '';
+        ? 'sm:bg-transparent bg-white absolute top-0 left-0 right-0'
+        : 'bg-white';
 })
 </script>
 
 <template>
-    <nav class="bg-white w-full z-50" :class="transparantClass">
+    <nav class="w-full" :class="transparantClass">
         <!-- Primary Navbar -->
         <div class="px-4 sm:px-6 xl:px-20">
             <div class="flex h-20 justify-between items-center">
