@@ -62,13 +62,11 @@ return new class extends Migration
             $table->string('nama_lengkap');
             $table->string('email');
             $table->string('no_hp');
+            $table->string('nama_masjid')->nullable();
 
             // Location Details
-            $table->string('nama_masjid')->nullable();
             $table->text('alamat_lengkap_lokasi')->nullable();
             $table->string('koordinat')->nullable();
-
-            // Land Information
             $table->enum('kondisi_lahan', self::KONDISI_LAHAN);
             $table->decimal('panjang_lahan', 8, 2);
             $table->decimal('lebar_lahan', 8, 2);
