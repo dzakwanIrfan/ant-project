@@ -12,7 +12,7 @@ const animasi = "transition-transform duration-300 ease-in-out hover:-translate-
             class="absolute bottom-0 right-0 object-cover transition-all xl:h-[65%] lg:h-[60%] md:h-[50%] sm:h-[37.5%] sm:block hidden left-1/2 md:left-auto transform -translate-x-1/2 md:-translate-x-0"
         >
         <img src="masjid/yoga-sukma-h4xWsKltqJM-unsplash.jpg" alt="masjid" class="object-cover object-top h-80 w-full block sm:hidden">
-        <div class="xl:px-32 lg:px-28 md:px-20 px-4 md:pt-56 sm:pt-40 pt-4">
+        <div class="xl:px-32 lg:px-28 md:px-20 px-4 md:pt-40 lg:pt-56 sm:pt-40 pt-4">
             <div class="text-blue3 font-black xl:text-[5rem] lg:text-[4.5rem] md:text-[4rem] sm:text-[3.5rem] text-[2.3rem] text-left sm:text-center md:text-left leading-none">
                 <div>Desain Masjid Gratis</div>
                 <div>Untuk Umat!</div>
@@ -22,7 +22,7 @@ const animasi = "transition-transform duration-300 ease-in-out hover:-translate-
             </div>
             <div class="mt-10 md:mt-20 flex sm:gap-8 gap-4 justify-center md:justify-normal">
                 <Link
-                    href="#"
+                    :href="route('form.show')"
                     class="bg-blue3 hover:bg-hover_blue3 text-white font-bold sm:text-lg text-base sm:px-6 sm:py-3 px-4 py-2 rounded-lg"
                     :class="animasi"
                 >

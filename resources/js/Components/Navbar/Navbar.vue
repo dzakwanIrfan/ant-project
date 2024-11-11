@@ -24,12 +24,6 @@ const transparantClass = computed(() => {
         : 'bg-white';
 });
 
-const handleLogout = () => {
-    // Implementasi logout menggunakan Inertia
-    // Misalnya:
-    // router.post(route('logout'));
-};
-
 onClickOutside(profileButtonRef, () => {
     showProfileDropdown.value = false;
 });
@@ -84,7 +78,7 @@ const toggleProfileDropdown = () => {
                     <button 
                         ref="profileButtonRef"
                         @click="toggleProfileDropdown"
-                        class="flex items-center gap-3 border-2 border-blue3 rounded-lg px-4 py-2 bg-white hover:shadow"
+                        class="flex items-center gap-3 border-2 border-blue3 rounded-lg px-4 py-2 hover:shadow"
                     >
                         <img 
                             src="blank-profile.png" 
@@ -99,7 +93,7 @@ const toggleProfileDropdown = () => {
                     <!-- Profile Dropdown -->
                     <div 
                         v-show="showProfileDropdown" 
-                        class="absolute right-0 mt-2 w-full bg-white rounded-lg shadow-lg py-2 border border-gray-200 z-50"
+                        class="absolute -bottom-24 w-full bg-white rounded-lg shadow-lg py-2 border border-gray-200 z-50"
                     >
                         <!-- Profile Menu -->
                         <Link 
