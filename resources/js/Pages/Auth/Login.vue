@@ -5,6 +5,7 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import GoogleLogin from '@/Components/GoogleLogin.vue';
 
 defineProps({
     canResetPassword: {
@@ -95,10 +96,7 @@ const submit = () => {
                             <div class="px-4 text-myBlack">atau</div>
                             <div class="flex-grow h-[0.5px] bg-myBlack "></div>
                         </div>
-                        <button class="flex px-4 py-2 gap-4 bg-white border-myBlack border justify-center rounded w-auto max-w-sm m-auto text-myBlack active:border-blue3 active:ring-2 active:ring-blue3">
-                            <img src="icon/google-icon-logo-svgrepo-com.svg" alt="Google" class="size-6">
-                            <p>Sign in with Google</p>
-                        </button>
+                        <GoogleLogin />
                     </div>
                 </div>
                 <img src="masjid/mufid-majnun-VByf8pUawyU-unsplash.jpg" alt="" class="w-1/2 hidden lg:block object-cover">

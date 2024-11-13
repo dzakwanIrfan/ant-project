@@ -8,8 +8,8 @@ import { onClickOutside } from '@vueuse/core';
 const showNav = ref(false);
 const showProfileDropdown = ref(false);
 const profileButtonRef = ref(null);
-const page = usePage();
-const isAuth = computed(() => page.props.auth.user !== null);
+const auth = usePage().props.auth.user;
+const isAuth = computed(() => auth !== null);
 
 const props = defineProps({
     transparant: {
@@ -28,7 +28,6 @@ onClickOutside(profileButtonRef, () => {
     showProfileDropdown.value = false;
 });
 
-// Toggle function for profile dropdown
 const toggleProfileDropdown = () => {
     showProfileDropdown.value = !showProfileDropdown.value;
 };
@@ -81,12 +80,12 @@ const toggleProfileDropdown = () => {
                         class="flex items-center gap-3 border-2 border-blue3 rounded-lg px-4 py-2 hover:shadow"
                     >
                         <img 
-                            src="blank-profile.png" 
+                            :src="auth.photo" 
                             alt="Blank Profile" 
                             class="rounded-full size-8 object-cover"
                         >
                         <div class="text-base text-myBlack">
-                            Dzakwan Irfan Ramdhani
+                            {{ auth.name }}
                         </div>
                     </button>
 

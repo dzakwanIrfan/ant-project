@@ -1,9 +1,19 @@
+<script setup>
+    import InputError from '@/Components/InputError.vue';
+    import InputLabel from '@/Components/InputLabel.vue';
+    import TextAreaInput from '@/Components/TextAreaInput.vue';
+    import TextInput from '@/Components/TextInput.vue';
+    import VerticalTimeline from '@/Components/VerticalTimeline.vue';
+    import GuestLayout from '@/Layouts/GuestLayout.vue';
+    import { Head } from '@inertiajs/vue3';
+</script>
+
 <template>
     <Head title="Permohonan" />
     <GuestLayout>
         <div class="min-h-screen bg-gray-50">
             <!-- Container with responsive padding -->
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="container mx-auto px-2 sm:px-6 lg:px-8 py-8">
                 <!-- Main content wrapper -->
                 <div class="flex flex-col lg:flex-row gap-8">
                     <!-- Timeline section -->
@@ -15,10 +25,10 @@
                     </div>
 
                     <!-- Form section -->
-                    <div class="w-full lg:w-9/12">
+                    <form action="" method="post" class="w-full lg:w-9/12">
                         <div class="bg-white rounded-lg shadow-sm p-6 space-y-8">
                             <!-- Informasi Pemohon -->
-                            <section>
+                            <section id="informasi_pemohon">
                                 <h2 class="text-xl sm:text-2xl font-bold text-blue3 mb-6">
                                     Informasi Pemohon
                                 </h2>
@@ -83,7 +93,7 @@
                             </section>
 
                             <!-- Detail Lokasi Pembangunan -->
-                            <section>
+                            <section id="detail_lokasi_pembangunan">
                                 <h2 class="text-xl sm:text-2xl font-bold text-blue3 mb-6">
                                     Detail Lokasi Pembangunan
                                 </h2>
@@ -144,7 +154,7 @@
                                         <select 
                                             name="status_lahan_wakaf" 
                                             id="status_lahan_wakaf" 
-                                            class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue3 focus:ring-blue3"
+                                            class="w-full rounded-md border-gray-900 px-3 py-2 text-sm shadow-sm focus:border-blue3 focus:ring-blue3 focus:outline-none focus:ring-1 disabled:cursor-not-allowed disabled:bg-gray-50"
                                             required
                                         >
                                             <option selected disabled>-- Pilih Opsi Status Lahan Wakaf --</option>
@@ -194,7 +204,7 @@
                             </section>
 
                             <!-- Kebutuhan Design -->
-                            <section>
+                            <section id="kebutuhan_design">
                                 <h2 class="text-xl sm:text-2xl font-bold text-blue3 mb-6">
                                     Kebutuhan Design
                                 </h2>
@@ -202,7 +212,7 @@
                             </section>
 
                             <!-- Catatan Khusus -->
-                            <section>
+                            <section id="catatan_khusus">
                                 <h2 class="text-xl sm:text-2xl font-bold text-blue3 mb-6">
                                     Catatan Khusus
                                 </h2>
@@ -219,19 +229,10 @@
                                 </div>
                             </section>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
     </GuestLayout>
 </template>
 
-<script setup>
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import TextAreaInput from '@/Components/TextAreaInput.vue';
-import TextInput from '@/Components/TextInput.vue';
-import VerticalTimeline from '@/Components/VerticalTimeline.vue';
-import GuestLayout from '@/Layouts/GuestLayout.vue';
-import { Head } from '@inertiajs/vue3';
-</script>

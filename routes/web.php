@@ -1,10 +1,19 @@
 <?php
 
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
+Route::middleware(['web'])->group(function () {
+    Route::get('auth/google/redirect', [GoogleController::class, 'redirectToGoogle']);
+    Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+});
+
+Route::get('/link-google', [GoogleController::class, 'showLinkGoogle'])->name('link-google')->middleware('auth');
+Route::post('/link-google', [GoogleController::class, 'linkGoogle'])->name('link-google.post')->middleware('auth');
 
 Route::get('/', function () {
     return Inertia::render('Welcome');

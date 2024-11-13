@@ -2,7 +2,7 @@
     <Head title="Profile" />
     <GuestLayout>
         <div class="min-h-screen bg-gray-50">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="container mx-auto px-2 sm:px-6 lg:px-8 py-8">
                 <!-- Main content wrapper -->
                 <div class="flex flex-col lg:flex-row gap-4">
                     <!-- Profile Section -->
@@ -19,7 +19,7 @@
                                     <!-- Profile Image -->
                                     <div class="flex justify-center lg:justify-start">
                                         <img 
-                                            src="blank-profile.png" 
+                                            :src="user.photo"
                                             alt="Profile Picture" 
                                             class="w-32 h-32 sm:w-40 sm:h-40 rounded-xl object-cover shadow-sm transform transition-transform duration-300 hover:scale-105"
                                         >
