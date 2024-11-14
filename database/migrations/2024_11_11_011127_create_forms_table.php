@@ -6,12 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Constants for enum values to maintain consistency and reusability
-     */
     private const KONDISI_LAHAN = [
         'Kosong',
-        'Sawah', 
+        'Sawah',
         'Terdapat Bangunan'
     ];
 
@@ -23,49 +20,29 @@ return new class extends Migration
         'Sedang pelunasan pembelian'
     ];
 
-    private const FASILITAS = [
-        'TPQ',
-        'Ruang Rapat',
-        'Parkir',
-        'AC',
-        'Taman/Bukaan',
-        'Mihrab Imam'
-    ];
-
     private const JENIS_ATAP = [
         'Limasan',
         'Plat',
         'Kubah'
     ];
 
-    private const REFERENSI_DESAIN = [
-        'Tradisional',
-        'Modern', 
-        'Timur Tengah',
-        'Melayu',
-        'Hijau (Sustain Ramah Lingkungan)',
-        'Modular',
-        'Multifungsi',
-        'Minimalis'
-    ];
-
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('forms', function (Blueprint $table) {
             // Primary Key
             $table->id();
 
+            $table->string('user_id')->references('id')->on('users')->cascadeOnDelete();
+            $table->string('tracking_number')->unique();
+
             // Personal Information
             $table->string('nama_lengkap');
-            $table->string('email');
+            $table->string('email')->nullable();
             $table->string('no_hp');
             $table->string('nama_masjid')->nullable();
 
             // Location Details
-            $table->text('alamat_lengkap_lokasi')->nullable();
+            $table->text('alamat_lengkap_lokasi');
             $table->string('koordinat')->nullable();
             $table->enum('kondisi_lahan', self::KONDISI_LAHAN);
             $table->decimal('panjang_lahan', 8, 2);
@@ -74,14 +51,12 @@ return new class extends Migration
 
             // Design Requirement
             $table->integer('kapasitas_jamaah')->unsigned();
-            $table->enum('fasilitas_tambahan', self::FASILITAS);
+            $table->json('fasilitas_tambahan')->nullable(); 
             $table->tinyInteger('jumlah_lantai')->unsigned();
             $table->enum('atap', self::JENIS_ATAP);
-            $table->enum('referensi', self::REFERENSI_DESAIN);
-            $table->decimal('batasan_budget', 15, 2);
 
             // Additional Information
-            $table->text('catatan');
+            $table->text('catatan')->nullable();
 
             // Timestamps
             $table->timestamps();
@@ -92,9 +67,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('forms');

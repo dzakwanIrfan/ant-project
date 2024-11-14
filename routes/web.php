@@ -42,6 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     Route::get('/permohonan', [FormController::class, 'show'])->name('form.show');
+    Route::post('/permohonan', [FormController::class, 'store'])->name('form.store');
+
 });
 
 require __DIR__.'/auth.php';
